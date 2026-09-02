@@ -1,0 +1,36 @@
+.painel {
+    flex: 1;
+    width: 50vw;
+    height: 10px;
+}
+
+.vazio {
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 16px;
+    background-color: #f5f6f7;
+    display: flex;
+    height: 30vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.vazio-icon {
+    width: 44px;
+    height: 44px;
+    color: #94a3b8;
+    margin-bottom: 18px;
+}
+
+.sem-cadastro {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.descricao {
+    font-size: 13px;
+    color: #64748b;
+}

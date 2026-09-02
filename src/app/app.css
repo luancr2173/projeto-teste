@@ -1,0 +1,17 @@
+.main {
+    max-width: 1160px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.container {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
