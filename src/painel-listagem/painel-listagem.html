@@ -15,7 +15,7 @@
     </div>
     }@else{
     <div id="cards-grid" class="cards-grid">
-        @for (item of colaboradores(); track item.email) {
+        @for (item of colaboradores(); track item.id) {
         <div class="colaborador-card">
             <button type="button" class="btn-exluir" (click)="excluirColaborador(item.id)">x</button>
             <div class="card-topo">
