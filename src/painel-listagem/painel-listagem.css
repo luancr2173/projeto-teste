@@ -100,12 +100,12 @@
 }
 
 .email {
-    font-size: 12px;
+    font-size: 13px;
     color: #64748b;
-    display: block;
-    white-space: nowrap;
+    margin: 0;
     overflow: hidden;
     word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .card-detalhes {
@@ -131,6 +131,10 @@
 
 .valor {
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
 }
 
 .valorProjeto {
@@ -164,4 +168,31 @@
     margin-bottom: -30px;
     margin-right: -20px;
     margin-top: -20px;
+}
+
+@media (max-width: 768px) {
+    .painel {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .colaborador-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .vazio {
+        width: 100%;
+        max-width: 320px;
+    }
 }

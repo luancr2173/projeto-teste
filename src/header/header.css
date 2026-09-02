@@ -39,3 +39,27 @@ h1 {
     font-weight: 700;
     margin-right: 4px;
 }
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        /* Coloca o título em cima e o contador embaixo */
+        align-items: center;
+        /* Centraliza os dois na tela */
+        text-align: center;
+        /* Centraliza o texto */
+        gap: 14px;
+        /* Espaço entre o título e a pílula do contador */
+        margin-bottom: 24px;
+    }
+
+    h1 {
+        font-size: 22px;
+        /* Tamanho confortável para telas pequenas */
+    }
+
+    .counter {
+        padding: 6px 14px;
+        /* Pílula do contador um pouco mais compacta */
+    }
+}
