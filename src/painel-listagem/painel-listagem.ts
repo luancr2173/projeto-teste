@@ -17,4 +17,11 @@ export class PainelListagem {
   excluirColaborador(id: number) {
     this.colaboradorService.removerColaborador(id);
   }
+
+  formatarData(data: string): string {
+    if (!data) return '';
+    const [ano, mes, dia] = data.split('-');
+    return `${dia}/${mes}/${ano}`;
+  }
+
 }
