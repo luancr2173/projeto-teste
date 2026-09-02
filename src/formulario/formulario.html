@@ -2,27 +2,27 @@
     <h2>Novo colaborador</h2>
     <p class="card-subtitle">Preencha os dados abaixo para emitir um novo cartão.</p>
 
-    <div class="form-group">
+    <form class="form-group" (ngSubmit)="adicionarColaborador()">
         <label for="nome">
             Nome completo
-            <input type="text" id="nome" name="nome" placeholder="Ex: Ana Beatriz Souza" required>
+            <input type="text" [(ngModel)]="NovoColaborador.nome" id="nome" name="nome" placeholder="Ex: Ana Beatriz Souza" required>
         </label>
 
         <label for="email">
             E-mail
-            <input type="email" id="email" name="email" placeholder="ana.souza@empresa.com" required>
+            <input type="email" [(ngModel)]="NovoColaborador.email" id="email" name="email" placeholder="ana.souza@empresa.com" required>
         </label>
 
         <label for="projeto">
             Projeto
-            <input type="text" id="projeto" name="projeto" placeholder="Ex: Migração Sankhya" required>
+            <input type="text" [(ngModel)]="NovoColaborador.projeto" id="projeto" name="projeto" placeholder="Ex: Migração Sankhya" required>
         </label>
 
         <label for="data-admissao">
             Data de admissão
-            <input type="date" id="data-admissao" name="data-admissao" required>
+            <input type="date" [(ngModel)]="NovoColaborador.dataAdmissao" id="data-admissao" name="data-admissao" required>
         </label>
 
         <button type="submit">Adicionar</button>
-    </div>
+    </form>
 </div>
