@@ -12,29 +12,33 @@ import { FormsModule } from '@angular/forms';
 export class Formulario {
   private readonly ColaboradorService = inject(colaboradorService);
 
+  tentativaDeEnvio = false;
+
   NovoColaborador: Colaborador = {
+    id: 0,
     nome: '',
     email: '',
-    projeto: ' ',
-    dataAdmissao: ' '
+    projeto: '',
+    dataAdmissao: ''
   };
-  
+
   adicionarColaborador() {
-    if( !this.NovoColaborador.nome || !this.NovoColaborador.email || !this.NovoColaborador.projeto || !this.NovoColaborador.dataAdmissao) {
-      alert('Por favor, preencha todos os campos antes de adicionar um colaborador.');
+    this.tentativaDeEnvio = true;
+
+    if (!this.NovoColaborador.nome || !this.NovoColaborador.email || !this.NovoColaborador.projeto || !this.NovoColaborador.dataAdmissao) {
       return;
-    } else {
-      console.log('Novo colaborador adicionado:', this.NovoColaborador);
+    }else {
+      this.ColaboradorService.adicionarColaborador(this.NovoColaborador);
     }
 
-    this.ColaboradorService.adicionarColaborador(this.NovoColaborador);
-
     this.NovoColaborador = {
+      id: 0,
       nome: '',
       email: '',
-      projeto: ' ',
-      dataAdmissao: ' '
+      projeto: '',
+      dataAdmissao: ''
     };
+    this.tentativaDeEnvio = false;
   }
 
 }

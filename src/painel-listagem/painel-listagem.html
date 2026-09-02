@@ -17,24 +17,27 @@
     <div id="cards-grid" class="cards-grid">
         @for (item of colaboradores(); track item.email) {
         <div class="colaborador-card">
+            <button type="button" class="btn-exluir" (click)="excluirColaborador(item.id)">x</button>
             <div class="card-topo">
+
                 <div class="avatar">{{ item.nome.charAt(0).toUpperCase() }}</div>
                 <div class="dados-principais">
                     <h3 class="nome">{{ item.nome }}</h3>
-                    <span class="email">{{ item.email }}</span>
+                    <span class="valorProjeto">{{ item.projeto }}</span>
                 </div>
             </div>
 
             <div class="card-detalhes">
                 <div class="linha-detalhe">
-                    <span class="rotulo">Projeto:</span>
-                    <span class="valor">{{ item.projeto }}</span>
+                    <span class="rotulo">Email:</span>
+                    <span class="valor">{{ item.email }}</span>
                 </div>
                 <div class="linha-detalhe">
                     <span class="rotulo">Admissão:</span>
                     <span class="valor">{{ item.dataAdmissao }}</span>
                 </div>
             </div>
+            <span class="card-id">ID: #{{ item.id }}</span>
         </div>
         }
     </div>

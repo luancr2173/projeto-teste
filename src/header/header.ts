@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { colaboradorService } from './../services/colaborador.service';
+import { Component, inject, computed } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
-export class Header {}
+export class Header {
+  private readonly title: string = 'Cadastro de Colaboradores';
+
+  private readonly colaboradorService = inject(colaboradorService);
+
+  readonly totalColaboradores = computed(() => this.colaboradorService.colaboradores().length);
+    
+}

@@ -2,25 +2,44 @@
     <h2>Novo colaborador</h2>
     <p class="card-subtitle">Preencha os dados abaixo para emitir um novo cartão.</p>
 
-    <form class="form-group" (ngSubmit)="adicionarColaborador()">
+    <form class="form-group" (ngSubmit)="adicionarColaborador()" novalidate>
         <label for="nome">
             Nome completo
-            <input type="text" [(ngModel)]="NovoColaborador.nome" id="nome" name="nome" placeholder="Ex: Ana Beatriz Souza" required>
+            <input type="text" [(ngModel)]="NovoColaborador.nome" id="nome" name="nome"
+                [class.input-erro]="tentativaDeEnvio && !NovoColaborador.nome.trim()"
+                placeholder="Ex: Ana Beatriz Souza" required>
+            @if (tentativaDeEnvio && !NovoColaborador.nome.trim()) {
+            <span class="mensagem-erro">Informe o nome do colaborador</span>
+            }
         </label>
 
         <label for="email">
             E-mail
-            <input type="email" [(ngModel)]="NovoColaborador.email" id="email" name="email" placeholder="ana.souza@empresa.com" required>
+            <input type="email" [(ngModel)]="NovoColaborador.email" id="email" name="email"
+                [class.input-erro]="tentativaDeEnvio && !NovoColaborador.email.trim()"
+                placeholder="ana.souza@empresa.com" required>
+            @if (tentativaDeEnvio && !NovoColaborador.email.trim()) {
+            <span class="mensagem-erro">Informe o e-mail do colaborador</span>
+            }
         </label>
 
         <label for="projeto">
             Projeto
-            <input type="text" [(ngModel)]="NovoColaborador.projeto" id="projeto" name="projeto" placeholder="Ex: Migração Sankhya" required>
+            <input type="text" [(ngModel)]="NovoColaborador.projeto" id="projeto" name="projeto"
+                [class.input-erro]="tentativaDeEnvio && !NovoColaborador.projeto.trim()"
+                placeholder="Ex: Migração Sankhya" required>
+            @if (tentativaDeEnvio && !NovoColaborador.projeto.trim()) {
+            <span class="mensagem-erro">Informe o projeto do colaborador</span>
+            }
         </label>
 
         <label for="data-admissao">
             Data de admissão
-            <input type="date" [(ngModel)]="NovoColaborador.dataAdmissao" id="data-admissao" name="data-admissao" required>
+            <input type="date" [(ngModel)]="NovoColaborador.dataAdmissao" id="data-admissao" name="data-admissao"
+                [class.input-erro]="tentativaDeEnvio && !NovoColaborador.dataAdmissao.trim()" required>
+                @if (tentativaDeEnvio && !NovoColaborador.dataAdmissao.trim()) {
+            <span class="mensagem-erro">Informe a data de admissão do colaborador</span>
+            }
         </label>
 
         <button type="submit">Adicionar</button>

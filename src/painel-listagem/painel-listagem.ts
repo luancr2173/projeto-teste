@@ -13,4 +13,8 @@ export class PainelListagem {
   private readonly colaboradorService = inject(colaboradorService);
 
   readonly colaboradores = this.colaboradorService.colaboradores;
+
+  excluirColaborador(id: number) {
+    this.colaboradorService.removerColaborador(id);
+  }
 }

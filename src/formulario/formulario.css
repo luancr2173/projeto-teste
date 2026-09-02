@@ -4,7 +4,7 @@
     background: #ffffff;
     padding: 28px 22px;
     border-radius: 16px;
-    border-top: 5px solid #1d4ed8;
+    border-top: 5px solid #204791;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
     box-sizing: border-box;
 }
@@ -64,7 +64,7 @@ input:focus {
 
 button[type="submit"] {
     margin-top: 6px;
-    background-color: #1d4ed8;
+    background-color: #2452a6;
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -79,4 +79,20 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #1e40af;
+}
+
+input.input-erro {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2;
+}
+
+input.input-erro:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.mensagem-erro {
+    font-size: 11px;
+    font-weight: 600;
+    color: #ef4444;
+    margin-top: 2px;
 }
